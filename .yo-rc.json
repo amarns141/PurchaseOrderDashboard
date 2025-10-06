@@ -1,0 +1,18 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.19.0",
+    "sdksVersions": {},
+    "version": "1.21.1",
+    "libraryName": "sunflag",
+    "libraryId": "262e96b1-99f5-4e32-bbe3-db1035c74b45",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "sunflag",
+    "solutionShortDescription": "sunflag description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
