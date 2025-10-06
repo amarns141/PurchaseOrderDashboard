@@ -12,7 +12,4 @@ export interface IPoDashboardProps {
   archivalPODashboardUrl: string;
   newRequestUrl : string;
   context:WebPartContext;
-
-  //description: string;
-  //userDisplayName: string;
 }
