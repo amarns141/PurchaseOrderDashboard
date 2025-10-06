@@ -4,9 +4,6 @@ import { PrimaryButton, DefaultButton, Pivot, PivotItem, TextField, DetailsList,
 
 import { SPFI } from "@pnp/sp";
 import { getAllPOItems, getCurrentUser } from '../../../Services/PODashboardService';
- import { WebPartContext } from '@microsoft/sp-webpart-base';
-
-//------- Getting Request counts ---------//
 
 interface IPurchaseOrderDashboardProps {
   _props: any; 
@@ -158,7 +155,6 @@ const PurchaseOrderDashboard: React.FC<IPurchaseOrderDashboardProps> = ({_props}
 
         case "pending":
           setSelectedTab("pending");
-          //setFilterData(poData?.allItems.filter(item => (item.Status =="Approved" && item.RequesterName?.Id === currentUserId)) || []);
           setFilterData(poData?.assigneToMePending || []);
           break;
 

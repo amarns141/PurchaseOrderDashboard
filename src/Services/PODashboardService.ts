@@ -63,7 +63,6 @@ export async function getAllPOItems(context: WebPartContext, _props:any, sp: SPF
       "ApprovalType/Title",  "RequesterName/Id",  "RequesterName/Title",  "AssignedTo/Id", "Author/Id", "Author/Title",  
       "AssignedTo/Title","AssignedTo/Id","AssignedTo/Title")
     .expand("RequesterName","AssignedTo","ApprovalType","Author","AssignedTo")
-    //.filter(`Author/Id eq ${userId} or AssignedTo/Id eq ${userId}`)
     .top(1000)) {
     allItems.push(...items);
   }
@@ -82,8 +81,6 @@ export async function getAllPOItems(context: WebPartContext, _props:any, sp: SPF
       item => (item.Author.Id === userId && item.Status === "Approved")
     ),
     assigneToMe: allItems.filter(
-      //item => item.Status === "Pending"//item.AssignedToIds.includes(userId)
-      //item => item?.AssignedToIds.toLowerCase().includes(userId)
       item => (
         item?.AssignedToIds?.split(';')
           .filter((x: string) => x)     
@@ -113,8 +110,6 @@ export async function getAllPOItems(context: WebPartContext, _props:any, sp: SPF
         && item.Status === "Approved"
       )
     ),
-
-
 
     myPending: allItems.filter(
       item => item.Status === "Pending" 
