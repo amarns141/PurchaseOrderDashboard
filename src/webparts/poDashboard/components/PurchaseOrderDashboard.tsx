@@ -113,7 +113,8 @@ const PurchaseOrderDashboard: React.FC<IPurchaseOrderDashboardProps> = ({_props}
           break;
 
         case "pending":
-          searchData = poData?.allItems.filter(item => (item.Status =="Approved" && item.RequesterName?.Id === currentUserId)) || [];
+          searchData = poData?.assigneToMePending || [];
+          //searchData = poData?.allItems.filter(item => (item.Status =="Approved" && item.RequesterName?.Id === currentUserId)) || [];
           break;
 
         case "all":
@@ -156,6 +157,7 @@ const PurchaseOrderDashboard: React.FC<IPurchaseOrderDashboardProps> = ({_props}
         case "pending":
           setSelectedTab("pending");
           setFilterData(poData?.assigneToMePending || []);
+          //setFilterData(poData?.allItems.filter(item => (item.Status =="Approved" && item.RequesterName?.Id === currentUserId)) || []);
           break;
 
         case "all":
